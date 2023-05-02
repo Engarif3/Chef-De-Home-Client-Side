@@ -9,8 +9,8 @@ const Chef = ({ chef }) => {
       <div
         className="m-auto border border-2 rounded-4 border-text-danger "
         style={{
-          width: "14rem",
-          height: "24rem",
+          width: "16rem",
+          height: "26rem",
           position: "relative",
           backgroundColor: "black",
         }}
