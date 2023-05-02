@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import Chef from './Chef';
 import {FaGreaterThan, FaLessThan} from 'react-icons/fa';
 import {  Container } from "react-bootstrap";
+import HomeBanner from '../Banner/HomeBanner';
 
 const Chefs = () => {
 
@@ -17,7 +18,9 @@ const Chefs = () => {
          setStartIndex(startIndex - 1);
      };
     return (
-        <Container className='vh-100 d-flex flex-column align-items-center justify-content-center gap-4'>
+        <div>
+        <HomeBanner></HomeBanner>
+        <Container className='mt-4 d-flex flex-column align-items-center justify-content-center gap-4'>
         <div className='d-flex align-items-center justify-content-center gap-4'>
             {chefs.slice(startIndex, startIndex + 4).map(chef=> <Chef key={chef.id} chef={chef}></Chef>)}
             
@@ -31,6 +34,7 @@ const Chefs = () => {
                 </button>
             </div>
         </Container>
+        </div>
         
     );
 };

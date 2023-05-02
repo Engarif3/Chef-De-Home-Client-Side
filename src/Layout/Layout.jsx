@@ -2,6 +2,8 @@ import React from "react";
 import Navigationbar from "../shared/Navbar/Navigationbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../shared/Footer/Footer";
+import {Container} from "react-bootstrap";
+import HomeBanner from "../Banner/HomeBanner";
 
 const Layout = () => {
   const style = {
@@ -24,6 +26,7 @@ const Layout = () => {
   return (
     <div>
       <Navigationbar></Navigationbar>
+      
       <Outlet></Outlet>
       <div style={phantom}>
          <div style={style} className="bg-black text-white">
