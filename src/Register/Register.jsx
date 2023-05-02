@@ -6,38 +6,50 @@ import { AuthContext } from '../Provider/AuthProvider';
 const Register = () => {
 
   const { createUser } = useContext(AuthContext);
-  const [accepted, setAccepted] = useState(false);
+  // const [accepted, setAccepted] = useState(false);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
 
   const handleRegister = event => {
       event.preventDefault();
+      setSuccess('');
+      setError('');
       const form = event.target;
       const name = form.name.value;
       const photo = form.photo.value;
       const email = form.email.value;
       const password = form.password.value;
+
+      if(password.length<6){
+        setError("The password is less than 6 characters");
+        return;
+      }
       
 
       createUser(email, password)
           .then(result => {
               const createdUser = result.user;
               console.log(createdUser);
-              event.target.reset(); 
+              event.target.reset();
+              setSuccess("Registration successful")
+              setError(''); 
           })
           .catch(error => {
-              console.log(error);
+              setError(error.message);
+              
           })
   }
 
-  const handleAccepted = event =>{
-      setAccepted(event.target.checked)
-  }
+  // const handleAccepted = event =>{
+  //     setAccepted(event.target.checked)
+  // }
 
     return (
         <div>
       
       <Container>
         <div className=' w-50 border mx-auto mt-4 mb-2  rounded bg-light'>
-        <h4 className="text-center mt-2">Please Login.</h4>
+        <h4 className="text-center mt-2">Please Register.</h4>
         <Form className="w-50  m-auto py-4" onSubmit={handleRegister}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Name</Form.Label>
@@ -79,6 +91,8 @@ const Register = () => {
           {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" name='accept' label="Accept Terms & Conditions." />
           </Form.Group> */}
+          <p className='text-success'>{success}</p>
+          <p className='text-danger'>{error}</p>
           <Button variant="primary" type="submit">
             Register
           </Button>{" "}

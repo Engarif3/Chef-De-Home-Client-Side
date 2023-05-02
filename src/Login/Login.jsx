@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaGoogle, FaGithub} from 'react-icons/fa';
 
 
 const Login = () => {
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn, } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/'
@@ -27,6 +28,19 @@ const Login = () => {
               console.log(error);
           })
   }
+
+  //Google Login
+          const handleGoogleLogin = () =>{
+              googleSignIn()
+              .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+          }
 
   return (
     <div>
@@ -69,8 +83,14 @@ const Login = () => {
           <Form.Text className="text-danger">
             
           </Form.Text>
+          
         </Form>
+        <div className="d-flex justify-content-center align-items-center gap-2 mb-5">
+              <Button className=" mt-2 " variant="outline-primary" onClick={handleGoogleLogin}> <FaGoogle/> <span className="px-2">Login With Google</span> </Button>{" "}
+              <Button className=" mt-2 " variant="outline-secondary"> <FaGithub/> <span span className="px-2">Login With Github</span> </Button>
+         </div>
     </div>
+    
       </Container>
     </div>
   );
