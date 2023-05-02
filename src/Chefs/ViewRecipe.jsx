@@ -11,7 +11,7 @@ const ViewRecipe = () => {
     return (
         <Container className='mb-4'>
             <p>Details coming soon ...{id}</p> 
-            <p className='d-flex justify-content-center'> <img src={image} alt="" className='w-50 h-50 '/> </p>
+            <p className='d-flex justify-content-center'> <img src={image} alt="" className='w-50 h-50'/> </p>
             <p className='text-center'>{name}</p> 
             <p>{bio}</p>
             <p>Number of Likes:{likes}</p>
