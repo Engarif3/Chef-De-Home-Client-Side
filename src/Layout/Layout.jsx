@@ -16,15 +16,24 @@ const Layout = () => {
     width: "100%",
   };
 
+  const phantom = { 
+    display: "block",
+    padding: "20px",
+    height: "60px",
+    width: "100%",};
   return (
     <div>
       <Navigationbar></Navigationbar>
       <Outlet></Outlet>
-      <div style={style} className="bg-black text-white">
-        <Footer></Footer>
-      </div>
+      <div style={phantom}>
+         <div style={style} className="bg-black text-white">
+         <Footer></Footer>
+         </div>
+       </div>
     </div>
   );
 };
 
 export default Layout;
+
+
