@@ -13,15 +13,15 @@ function RecipeName(props) {
     <div>
       <div
         className="border rounded-4 p-4 bg-light "
-        style={{ width: "28rem", height: "46rem", position: "relative" }}
+        style={{ width: "28rem", height: "42rem", position: "relative" }}
       >
-        <h4>{props.name}</h4>
-        <ul>
+        <h4 className="fst-italic fw-bold text-danger text-center">{props.name}</h4>
+        <ul> <h5 className="text-decoration-underline fw-bold">Ingredients:</h5>
           {props.ingredients.map((ingredient) => (
             <li key={ingredient}>{ingredient}</li>
           ))}
         </ul>
-        <ul>
+        <ul> <h5 className="text-decoration-underline fw-bold">Cooking Method:</h5>
           {props.cookingMethod.map((cooking) => (
             <li key={cooking}>{cooking}</li>
           ))}

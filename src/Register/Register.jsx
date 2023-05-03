@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
 
@@ -9,6 +11,7 @@ const Register = () => {
   // const [accepted, setAccepted] = useState(false);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
+  
 
   const handleRegister = event => {
       event.preventDefault();
@@ -31,7 +34,8 @@ const Register = () => {
               const createdUser = result.user;
               console.log(createdUser);
               event.target.reset();
-              setSuccess("Registration successful")
+              setSuccess("")
+              toast("Registration successful");
               setError(''); 
           })
           .catch(error => {
@@ -111,6 +115,7 @@ const Register = () => {
         </div>
         
       </Container>
+      <ToastContainer />
     </div>
     );
 };
