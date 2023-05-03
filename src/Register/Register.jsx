@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
 
   const { createUser } = useContext(AuthContext);
-  // const [accepted, setAccepted] = useState(false);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
   
@@ -44,9 +43,6 @@ const Register = () => {
           })
   }
 
-  // const handleAccepted = event =>{
-  //     setAccepted(event.target.checked)
-  // }
 
     return (
         <div>

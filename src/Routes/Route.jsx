@@ -6,6 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 import Chefs from "../Chefs/Chefs";
 import ViewRecipe from "../Chefs/ViewRecipe";
 import Blog from "./Blog/Blog";
+import ErrorPage from "../Section/ErrorPage/ErrorPage";
 
 
 
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     {
         path:"/",
         element:<Layout></Layout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:"/",

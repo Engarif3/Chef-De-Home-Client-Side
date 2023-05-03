@@ -1,16 +1,15 @@
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import image from "../assets/sm-2.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Section2 = () => {
-  const handleRegister = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const photo = form.photo.value;
-    const email = form.email.value;
-    const password = form.password.value;
+    toast("Feedback submitted");
+    event.currentTarget.disabled = true;
+    event.target.reset();
   };
   return (
     <Container className="my-5 border rounded-4">
@@ -21,7 +20,7 @@ const Section2 = () => {
         <img src={image} alt="" />
         <div className="w-100">
           <div className=" w-100 mx-auto mt-4 mb-2 ">
-            <Form className="w-50  m-auto py-4" onSubmit={handleRegister}>
+            <Form className="w-50  m-auto py-4" onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
@@ -55,7 +54,7 @@ const Section2 = () => {
               >
                 <Form.Label>Your Feedback</Form.Label>
                 <Form.Control as="textarea" rows={3} 
-                placeholder="Write your feedback here."/>
+                placeholder="Write your feedback here." required/>
               </Form.Group>
               <Button variant="primary" type="submit">
                 Submit Feedback
@@ -65,6 +64,7 @@ const Section2 = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </Container>
   );
 };
