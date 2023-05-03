@@ -3,7 +3,6 @@ import Layout from "../Layout/Layout";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PrivateRoute from "./PrivateRoute";
-import Home from "../Home";
 import Chefs from "../Chefs/Chefs";
 import ViewRecipe from "../Chefs/ViewRecipe";
 import Blog from "./Blog/Blog";

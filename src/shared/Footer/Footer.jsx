@@ -4,7 +4,7 @@ import { Container} from "react-bootstrap";
 const Footer = () => {
     return (
         <div>
-            <h6>&copy; 2023 Chef-Recipe-Hunter Inc. All rights reserved.</h6>
+            <h6 className='fst-italic'>&copy; 2023 Chef-De-Home Inc. All rights reserved.</h6>
         </div>
     );
 };

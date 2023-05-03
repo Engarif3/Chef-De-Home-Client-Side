@@ -2,8 +2,6 @@ import React from "react";
 import Navigationbar from "../shared/Navbar/Navigationbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../shared/Footer/Footer";
-import {Container} from "react-bootstrap";
-import HomeBanner from "../Banner/HomeBanner";
 
 const Layout = () => {
   const style = {
