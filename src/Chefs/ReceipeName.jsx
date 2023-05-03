@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 function RecipeName(props) {
   const handleClick = (event) => {
@@ -26,7 +28,11 @@ function RecipeName(props) {
             <li key={cooking}>{cooking}</li>
           ))}
         </ul>
-        <p> &nbsp; &nbsp; &nbsp; &nbsp; Rating: {props.rating}</p>
+        <div className="d-flex  align-items-center">
+        <p> &nbsp; &nbsp; &nbsp; &nbsp; Rating:</p> 
+        <Rating style={{ maxWidth: 100 }} value={props.rating}  readOnly className="pb-3" />
+        <p>{props.rating}</p>
+        </div>
         <Button
           style={{ position: "absolute", bottom: "50px", left: "40px" }}
           variant="primary"
