@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 const Blog = () => {
   return (
-    <Container className="text -center">
+    <Container className="text -center m-auto mt-4">
       <div>
         <h5>
           1. Tell us the differences between uncontrolled and controlled
