@@ -1,10 +1,16 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import ReactToPrint from "react-to-print";
+
 
 const Blog = () => {
+
+  const printRef = React.useRef();
   return (
-    <Container className="text -center m-auto mt-4">
-      <div>
+    <Container className="text -center m-auto my-4">
+      <div id="print-container" ref={printRef}>
+        <h3 className="text-center text-decoration-underline mb-4">Questions & Answers</h3>
+      <div >
         <h5>
           1. Tell us the differences between uncontrolled and controlled
           components.
@@ -55,6 +61,14 @@ const Blog = () => {
           code as a custom hook does not need to be rendered again and again
           while rendering the whole code.
         </p>
+      </div>
+      </div>
+      <div className="d-flex justify-content-center">
+        
+      <ReactToPrint
+        trigger={() => <Button  variant="primary">Print this page</Button>}
+        content={() => printRef.current}
+      />
       </div>
     </Container>
   );
