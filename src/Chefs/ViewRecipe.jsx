@@ -1,7 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
-// import ReceipeName from "./ReceipeName";
 import RecipeName from "./ReceipeName";
 
 const ViewRecipe = () => {
@@ -14,9 +13,7 @@ const ViewRecipe = () => {
   return (
     <Container className="mb-4 ">
       <div>
-        <p>Details coming soon ...{id}</p>
         <p className="d-flex justify-content-center">
-          {" "}
           <img src={image} alt="" className="w-50 h-50" />{" "}
         </p>
         <p className="text-center">{name}</p>
