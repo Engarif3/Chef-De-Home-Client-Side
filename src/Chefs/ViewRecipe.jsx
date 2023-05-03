@@ -12,7 +12,7 @@ const ViewRecipe = () => {
   const { name, image, experience, recipes, likes, bio } = detail;
 
   return (
-    <Container className="mb-4">
+    <Container className="mb-4 ">
       <div>
         <p>Details coming soon ...{id}</p>
         <p className="d-flex justify-content-center">
@@ -26,11 +26,11 @@ const ViewRecipe = () => {
         <p>Years of Experience: {experience}</p>
       </div>
 
-      <div className='my-4 d-flex flex-row align-items-center justify-content-center gap-4 '>
+      <div className='my-4 d-flex align-items-center justify-content-center '>
 
       <div>
         {recipesData.map((chef) => (
-          <div key={chef.id}>
+          <div key={chef.id} className="my-4 d-flex align-items-center justify-content-center gap-2">
             {chef.recipe_details.map((recipe) => (
               <RecipeName
                 key={recipe.name}

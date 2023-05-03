@@ -3,7 +3,7 @@ import React from "react";
 function RecipeName(props) {
   return (
     <div>
-      <div className="border">
+      <div className="border" style={{width:"12rem"}}>
         <h4>{props.name}</h4>
         <ul>
           {props.ingredients.map((ingredient) => (
