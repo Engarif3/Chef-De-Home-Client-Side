@@ -8,7 +8,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navigationbar = () => {
   const { user, logOut, } = useContext(AuthContext);
-  // console.log(updateUser)
 
   const handleLogOut = () => {
     logOut()
@@ -18,7 +17,7 @@ const Navigationbar = () => {
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      {/* {user.email} */}
+      {/* {user.displayName} */}
       {user.displayName? user.displayName:user.email}
      
     </Tooltip>
@@ -57,6 +56,7 @@ const Navigationbar = () => {
               </Nav>
 
               <Nav className="d-flex  align-items-center gap-2">
+                
                 {user && (
                   <OverlayTrigger
                     placement="right"
@@ -67,11 +67,12 @@ const Navigationbar = () => {
                       className="d-flex justify-content-center align-items-center rounded-circle m-0 p-0  "
                       variant="primary"
                     >
-                      <FaUserCircle
+                      {/* <FaUserCircle
                         style={{ fontSize: "2.5rem" }}
                         className="m-0 p-0"
-                      ></FaUserCircle>
-                    </Button>
+                      ></FaUserCircle> */}
+                      <img src={user.photoURL} alt="" style={{ width: "2.5rem" }} className="m-0 p-0 rounded-circle" />
+                    </Button> 
                   </OverlayTrigger>
                 )}
 
