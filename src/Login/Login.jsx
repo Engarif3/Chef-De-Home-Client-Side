@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -7,6 +7,7 @@ import { FaGoogle, FaGithub} from 'react-icons/fa';
 
 const Login = () => {
 
+  const [error, setError] = useState();
   const { signIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -14,6 +15,7 @@ const Login = () => {
 
   const handleLogin = event => {
       event.preventDefault();
+      setError('');
       const form = event.target;
       const email = form.email.value;
       const password = form.password.value;
@@ -26,7 +28,7 @@ const Login = () => {
               navigate(from, { replace: true })
           })
           .catch(error => {
-              console.log(error);
+              setError("User's email address or Password doesn't match");
           })
   }
 
@@ -35,11 +37,11 @@ const Login = () => {
               googleSignIn()
               .then(result => {
                 const loggedUser = result.user;
-                // console.log(loggedUser);
+                setError('');
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
           }
 
@@ -53,7 +55,7 @@ const Login = () => {
       navigate(from, { replace: true })
   })
   .catch(error => {
-      console.log(error);
+      setError(error.message);
   })
 }
 
@@ -82,9 +84,7 @@ const Login = () => {
               required
             />
           </Form.Group>
-          {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group> */}
+          <p className="text-danger">{error}</p>
           <Button variant="primary" type="submit">
             Login
           </Button>{" "}
