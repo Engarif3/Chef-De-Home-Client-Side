@@ -23,7 +23,6 @@ const Login = () => {
       signIn(email, password)
           .then(result => {
               const loggedUser = result.user;
-              console.log(loggedUser);
               form.reset();
               navigate(from, { replace: true })
           })
@@ -51,7 +50,6 @@ const Login = () => {
     gitHubSignIn()
     .then(result => {
       const loggedUser = result.user;
-      console.log(loggedUser);
       navigate(from, { replace: true })
   })
   .catch(error => {

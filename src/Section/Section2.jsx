@@ -12,7 +12,7 @@ const Section2 = () => {
     event.target.reset();
   };
   return (
-    <Container className="my-5 border rounded-4 mt-4">
+    <Container className=" border rounded-4 mt-5">
       <h2 className="text-center mt-4 fst-italic">
         Your Opinion Matters. We will get back to you.
       </h2>

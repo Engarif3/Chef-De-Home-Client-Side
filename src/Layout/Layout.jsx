@@ -12,7 +12,7 @@ const Layout = () => {
     position: "fixed",
     left: "0",
     bottom: "0",
-    height: "60px",
+    height: "80px",
     width: "100%",
   };
 

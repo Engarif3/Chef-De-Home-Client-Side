@@ -20,7 +20,6 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-  
 
     if (password.length < 6) {
       setError("The password is less than 6 characters");
@@ -34,22 +33,18 @@ const Register = () => {
         setSuccess("");
         toast("Registration successful");
         setError("");
-        
-          // navigate("/login");
-                
-         updateUser(createdUser, name, photo)
-                .then(()=>{
-                 // console.log(name, photo)
-               })
-                  .catch(error=>{
-                   setError(error.message)
-                 })
-             
+
+        // navigate("/login");
+
+        updateUser(createdUser, name, photo)
+          .then(() => {})
+          .catch((error) => {
+            setError(error.message);
+          });
       })
       .catch((error) => {
         setError(error.message);
       });
-      
   };
 
   return (

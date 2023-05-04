@@ -9,7 +9,7 @@ const Section1 = () => {
 
     const style ={height:"325px", width:"340px"}
     return (
-        <Container className='mb-4'>
+        <Container className='mb-5'>
             <h2 className='text-center fst-italic'>Popular Dishes from Top Chefs</h2>
             <div className='d-md-flex d-lg-flex justify-content-center align-items-center'>
 
