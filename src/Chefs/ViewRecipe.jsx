@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 import RecipeName from "./ReceipeName";
 import { Container } from "react-bootstrap";
+import { FaRegThumbsUp } from 'react-icons/fa';
 
 const ViewRecipe = () => {
   const { id } = useParams();
@@ -19,9 +20,9 @@ const ViewRecipe = () => {
           <div className="w-50 p-5">
             <h4 className="text-center fst-italic text-danger ">{name}</h4>
             <p>{bio}</p>
-            <p> <span className="fw-bold">Number of Likes :</span>  {likes}</p>
-            <p><span className="fw-bold">Number of Recipes :</span> {recipes}</p>
-            <p><span className="fw-bold">Years of Experience :</span> {experience}</p>
+            <p> <span className="fw-bold"><FaRegThumbsUp className="mb-1"></FaRegThumbsUp> :</span>  {likes}</p>
+            <p><span className="fw-bold">Recipes :</span> {recipes}</p>
+            <p><span className="fw-bold">Experience :</span> {experience} Years</p>
           </div>
           <div className="d-flex justify-content-center align-items-center mr-4" style={{height: '400px'}}>
             <img  src={image} alt="" className="w-100 h-100 mt-5 rounded-4 mr-4" />

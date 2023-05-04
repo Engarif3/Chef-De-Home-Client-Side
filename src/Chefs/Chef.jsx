@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaRegThumbsUp } from 'react-icons/fa';
 
 const Chef = ({ chef }) => {
   const {id, name, image, experience, recipes, likes } = chef;
@@ -40,7 +41,7 @@ const Chef = ({ chef }) => {
             <div>
               <p> Years of Experience: {experience}</p>
               <p>Number of Recipes: {recipes}</p>
-              <p className="p-0">Likes: {likes}</p>
+              <p className="p-0"><FaRegThumbsUp className="mb-1"></FaRegThumbsUp> : {likes}</p>
             </div>
             <div className="d-flex justify-content-center">
               <Link className="w-75 mb-2" to={`chef/${id}`}>
