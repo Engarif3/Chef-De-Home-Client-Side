@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaRegThumbsUp } from 'react-icons/fa';
 
+
 const Chef = ({ chef }) => {
   const {id, name, image, experience, recipes, likes } = chef;
   return (
@@ -16,12 +17,15 @@ const Chef = ({ chef }) => {
           backgroundColor: "black",
         }}
       >
+        
+
         <img
           className="img-fluid w-100 h-50 mx-auto p-1 rounded-4-top"
           src={image}
           alt=""
           style={{ borderRadius: "15px 15px 0 0" }}
         />
+       
 
         <div
           style={{

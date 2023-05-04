@@ -4,6 +4,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 import RecipeName from "./ReceipeName";
 import { Container } from "react-bootstrap";
 import { FaRegThumbsUp } from 'react-icons/fa';
+import LazyLoad from 'react-lazy-load';
+import './ViewRecipe.css'
 
 const ViewRecipe = () => {
   const { id } = useParams();
@@ -24,9 +26,11 @@ const ViewRecipe = () => {
             <p><span className="fw-bold">Recipes :</span> {recipes}</p>
             <p><span className="fw-bold">Experience :</span> {experience} Years</p>
           </div>
-          <div className="d-flex justify-content-center align-items-center mr-4" style={{height: '400px'}}>
+          
+          <LazyLoad  height={400} offset={50} className="d-flex justify-content-center align-items-center mr-4" style={{height: '400px'}}>
             <img  src={image} alt="" className="w-100 h-100 mt-5 rounded-4 mr-4" />
-          </div>
+          </LazyLoad> 
+          
         </div>
         </Container>
         
