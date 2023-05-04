@@ -1,6 +1,8 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import {Container } from "react-bootstrap";
 import ReactToPrint from "react-to-print";
+import { FaPrint } from "react-icons/fa";
+import './Blog.css'
 
 const Blog = () => {
   const printRef = React.useRef();
@@ -16,9 +18,7 @@ const Blog = () => {
             components.
           </h5>
           <p className="ps-4">
-            A controlled component is a component that is controlled by React
-            state, while an uncontrolled component is a component that maintains
-            its own internal state.
+            A controlled component is a component that is controlled by the state of React and an uncontrolled component is a component that is maintained or controlled by its own internal state.
           </p>
         </div>
 
@@ -40,9 +40,9 @@ const Blog = () => {
         <div>
           <h5>3. Tell us the difference between nodejs and express js.</h5>
           <p className="ps-4">
-            NodeJS is the package, which provides the JavaScript run-time
-            environment, whereas Express is a framework that sits on top of
-            NodeJS and helps us to handle requests and responses.
+            NodeJS is the package that provides the JavaScript run-time
+            environment.On the other hand, Express js is a framework that works on top of
+            NodeJS and helps users to handle requests and responses.
           </p>
         </div>
 
@@ -56,21 +56,24 @@ const Blog = () => {
             with the “use” keyword.
           </p>
           <p className="ps-4">
-            it can be reused easily, which makes the code cleaner and reduces
+            It can be reused easily, which makes the code cleaner and reduces
             the time to write the code. It also enhances the rendering speed of
             the code as a custom hook does not need to be rendered again and
             again while rendering the whole code.
           </p>
         </div>
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center align-items-center gap-2 mt-5">
+        <span className="text-danger">Press to print: </span> 
+      
         <ReactToPrint
-          trigger={() => <Button variant="primary">Print this page</Button>}
+          trigger={() => <FaPrint className="print-icon" style={{width:"2rem", height:"2rem"}}></FaPrint> }
           content={() => printRef.current}
         />
       </div>
     </Container>
   );
 };
+
 
 export default Blog;
