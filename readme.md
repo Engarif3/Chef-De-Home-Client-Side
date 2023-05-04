@@ -6,6 +6,7 @@
 * This project also shows dynamic routing when view recipe is clicked .
 * The homepage is also responsive for mobile device.
 * This project has toggling sign-in and sign-out button. When the user is signed in the logout button will show up and when the user is logged out a sign in button will show up.
+*Lazy load used in banner of Chef Recipes for chef image.
 * The whole project is built with react js.
 
 #### Click below for the project live link:
