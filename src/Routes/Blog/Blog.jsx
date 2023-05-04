@@ -24,7 +24,7 @@ const Blog = () => {
 
       <div>
         <h5>2. How to validate React props using PropTypes. </h5>
-        <p className="ps-4">
+        <div className="ps-4">
           <p>React PropTypes validators: </p>
           <p className="ps-4">
             <li>PropTypes.any: The prop can be of any data type.</li>
@@ -34,7 +34,7 @@ const Blog = () => {
             <li>PropTypes.func : The prop should be a function.</li>
             <li>PropTypes.array : The prop should be an array.</li>
           </p>
-        </p>
+        </div>
       </div>
 
       <div>

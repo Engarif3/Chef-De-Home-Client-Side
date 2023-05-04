@@ -7,7 +7,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navigationbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, } = useContext(AuthContext);
+  // console.log(updateUser)
 
   const handleLogOut = () => {
     logOut()
@@ -17,8 +18,9 @@ const Navigationbar = () => {
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      {user.email}
-      {/* {user.displayName} */}
+      {/* {user.email} */}
+      {user.displayName? user.displayName:user.email}
+     
     </Tooltip>
   );
 
