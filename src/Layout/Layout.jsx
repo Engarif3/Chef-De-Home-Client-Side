@@ -19,7 +19,7 @@ const Layout = () => {
   const phantom = { 
     display: "block",
     padding: "20px",
-    height: "60px",
+    height: "260px",
     width: "100%",};
   return (
     <div>

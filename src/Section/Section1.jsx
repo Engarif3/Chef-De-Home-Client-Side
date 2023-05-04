@@ -11,7 +11,7 @@ const Section1 = () => {
     return (
         <Container className='mb-4'>
             <h2 className='text-center fst-italic'>Popular Dishes from Top Chefs</h2>
-            <div className='d-flex justify-content-center align-items-center'>
+            <div className='d-md-flex d-lg-flex justify-content-center align-items-center'>
 
             <div><img style={style} src={pl1} alt="" /> <h4 className='text-center'>Classic Coq Au Vin</h4></div>
             <div><img style={style} src={pl2} alt="" /> <h4 className='text-center'>French Gimlet</h4></div>

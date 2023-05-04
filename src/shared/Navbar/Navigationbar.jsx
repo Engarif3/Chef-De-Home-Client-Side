@@ -7,7 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navigationbar = () => {
-  const { user, logOut, } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut()
@@ -18,8 +18,7 @@ const Navigationbar = () => {
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       {/* {user.displayName} */}
-      {user.displayName? user.displayName:user.email}
-     
+      {user.displayName ? user.displayName : user.email}
     </Tooltip>
   );
 
@@ -39,8 +38,10 @@ const Navigationbar = () => {
               className="bg-white"
             />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <h1 className="text-danger fst-italic">Chef De Home</h1>
-              <Nav className="mx-auto d-flex align-items-center gap-4">
+              <h1 className="text-center text-danger fst-italic mb-md-2 mb-lg-2">
+                Chef De Home
+              </h1>
+              <Nav className="mx-auto d-flex align-items-center gap-md-4">
                 <NavLink
                   className="nav-link text-decoration-none text-white"
                   to={"/"}
@@ -56,7 +57,6 @@ const Navigationbar = () => {
               </Nav>
 
               <Nav className="d-flex  align-items-center gap-2">
-                
                 {user && (
                   <OverlayTrigger
                     placement="right"
@@ -71,8 +71,13 @@ const Navigationbar = () => {
                         style={{ fontSize: "2.5rem" }}
                         className="m-0 p-0"
                       ></FaUserCircle> */}
-                      <img src={user.photoURL} alt="" style={{ width: "2.5rem" }} className="m-0 p-0 rounded-circle" />
-                    </Button> 
+                      <img
+                        src={user.photoURL}
+                        alt=""
+                        style={{ width: "2.5rem" }}
+                        className="m-0 p-0 rounded-circle"
+                      />
+                    </Button>
                   </OverlayTrigger>
                 )}
 
@@ -90,6 +95,15 @@ const Navigationbar = () => {
           </Container>
         </Navbar>
       </div>
+      <style>
+        {`
+          @media only screen and (max-width: 767px) {
+            .text-center {
+              text-align: center !important;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

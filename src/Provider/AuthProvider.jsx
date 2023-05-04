@@ -47,22 +47,20 @@ const AuthProvider = ({children}) => {
     }
     //update user data
 
-    const updateUser = (user,name,photo)=>{
-        setLoading(true);
-       return updateProfile(user, {
-            displayName:name,
-            photoURL:photo
-
-        });
-    }
+     const updateUser = (user,name,photo)=>{
+         setLoading(true);
+        return updateProfile(user, {
+             displayName:name,
+             photoURL:photo
+         });
+     }
 
 ///////////////////////////////////////////////////
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
-            // console.log('logged in user inside auth state observer', loggedUser)
+      
             setUser(loggedUser);
-            // console.log(user);
-            // console.log(loggedUser)
+           
             setLoading(false);
         })
 

@@ -16,7 +16,7 @@ const Section2 = () => {
       <h2 className="text-center mt-4 fst-italic">
         Your Opinion Matters. We will get back to you.
       </h2>
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-md-flex d-lg-flex justify-content-center align-items-center">
         <img src={image} alt="" />
         <div className="w-100">
           <div className=" w-100 mx-auto mt-4 mb-2 ">
