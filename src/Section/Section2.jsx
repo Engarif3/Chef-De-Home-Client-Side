@@ -17,9 +17,9 @@ const Section2 = () => {
         Your Opinion Matters. We will get back to you.
       </h2>
       <div className="d-md-flex d-lg-flex justify-content-center align-items-center">
-        <img src={image} alt="" />
+        <img  src={image} alt=""/>
         <div className="w-100">
-          <div className=" w-100 mx-auto mt-4 mb-2 ">
+          <div className="  mx-auto mt-4 mb-2 " >
             <Form className="w-50  m-auto py-4" onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Name</Form.Label>
