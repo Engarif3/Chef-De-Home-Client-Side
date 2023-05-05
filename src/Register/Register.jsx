@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -6,9 +6,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, logOut } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   const handleRegister = (event) => {
@@ -33,8 +34,16 @@ const Register = () => {
         setSuccess("");
         toast("Registration successful");
         setError("");
+        // will be logout after pressing register
+        logOut()
+          .then()
+          .catch((error) => console.log(error));
 
-        // navigate("/login");
+        // navigate to login page after 3 seconds after successful registration.
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
+
 
         updateUser(createdUser, name, photo)
           .then(() => {})
