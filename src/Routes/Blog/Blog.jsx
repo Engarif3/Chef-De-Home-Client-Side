@@ -63,8 +63,8 @@ const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="d-flex justify-content-center align-items-center gap-2 mt-5">
-        <span className="text-danger">Press to print: </span> 
+      <div className="d-flex justify-content-center align-items-center gap-2 mt-5 ">
+        <span className="text-danger">Download or Print PDF: </span> 
       
         <ReactToPrint
           trigger={() => <FaPrint className="print-icon" style={{width:"2rem", height:"2rem"}}></FaPrint> }

@@ -19,6 +19,7 @@ const Section1 = () => {
             <div><img style={style} src={pl4} alt="" /> <h4 className='text-center'>Spaghetti Nero </h4></div>
           
             </div>
+            <hr  className="border-2"/>
         </Container>
     );
 };

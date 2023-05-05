@@ -6,6 +6,7 @@ import {  Container } from "react-bootstrap";
 import HomeBanner from '../Banner/HomeBanner';
 import Section1 from '../Section/Section1';
 import Section2 from '../Section/Section2';
+import Section3 from '../Section/Section3';
 
 const Chefs = () => {
 
@@ -23,7 +24,7 @@ const Chefs = () => {
         <div>
         <HomeBanner></HomeBanner>
         <Container className='my-4 d-flex flex-column align-items-center justify-content-center gap-4 '>
-            <h2 className='fw-bold fst-italic text-center'>Chefs who took Cooking to another level.</h2>
+            <h2 className=' fst-italic text-center'>Chefs who took Cooking to another level.</h2>
         <div className='d-md-flex align-items-center justify-content-center gap-4 p-4 border rounded-4'>
             {chefs.slice(startIndex, startIndex + 4).map(chef=> <Chef key={chef.id} chef={chef}></Chef>)}
             
@@ -38,6 +39,7 @@ const Chefs = () => {
             </div>
         </Container>
         <Section1></Section1>
+        <Section3></Section3>
         <Section2></Section2>
         </div>
         

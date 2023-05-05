@@ -41,7 +41,7 @@ const Chef = ({ chef }) => {
           }}
         >
           <div className=" mb-4  " style={{ lineHeight: 1 }}>
-            <p className="text-center text-danger">{name}</p>
+            <h5 className="text-center text-danger">{name}</h5>
             <div>
               <p> Years of Experience: {experience}</p>
               <p>Number of Recipes: {recipes}</p>
